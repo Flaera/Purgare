@@ -1,0 +1,7 @@
+res://default_env.tres
+res://assets/menu_textures/menu.tscn
+res://scenes/character_movementation/world.tscn
+res://scenes/character_movementation/character_movementation.tscn
+res://scenes/inventory/Inventory.tscn
+res://scenes/character_movementation/character_movementation.gd
+res://assets/texture_inventory/assets_inventory/remedy_pickable.gd

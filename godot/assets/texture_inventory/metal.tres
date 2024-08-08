@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bvnl8hh532pur"]
+
+[ext_resource type="Script" path="res://assets/texture_inventory/resource_items_inventory.gd" id="1_herx3"]
+[ext_resource type="Texture2D" uid="uid://bbhmu3ggc2hij" path="res://assets/texture_inventory/inventory_remedy.png" id="2_ppqtw"]
+
+[resource]
+script = ExtResource("1_herx3")
+texture = ExtResource("2_ppqtw")
+amount = 5

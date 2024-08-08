@@ -1,0 +1,90 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://resources/theme_general_red.tres" type="Theme" id=1]
+
+[sub_resource type="CompressedTexture2D" id=1]
+flags = 4
+load_path = "res://.import/texture_rec_difficult.png-e72e607b51be1e11cb725bb2f20f0e6b.stex"
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.262745 )
+
+[node name="Label" type="Label" parent="ColorRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -487.0
+offset_top = 26.0
+offset_right = 488.0
+offset_bottom = 77.0
+theme = ExtResource( 1 )
+text = "Select the dificult"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -455.0
+offset_top = -188.0
+offset_right = 455.0
+offset_bottom = 273.0
+alignment = 1
+
+[node name="EASY" type="VBoxContainer" parent="ColorRect/HBoxContainer"]
+offset_left = 31.0
+offset_right = 451.0
+offset_bottom = 461.0
+alignment = 1
+
+[node name="TBTN_EASY" type="TextureButton" parent="ColorRect/HBoxContainer/EASY"]
+offset_top = 18.0
+offset_right = 420.0
+offset_bottom = 388.0
+texture_normal = SubResource( 1 )
+
+[node name="Label" type="Label" parent="ColorRect/HBoxContainer/EASY"]
+offset_top = 392.0
+offset_right = 420.0
+offset_bottom = 443.0
+theme = ExtResource( 1 )
+text = "Easy"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HARD" type="VBoxContainer" parent="ColorRect/HBoxContainer"]
+offset_left = 455.0
+offset_right = 875.0
+offset_bottom = 461.0
+alignment = 1
+
+[node name="TBTN_HARD" type="TextureButton" parent="ColorRect/HBoxContainer/HARD"]
+offset_top = 18.0
+offset_right = 420.0
+offset_bottom = 388.0
+texture_normal = SubResource( 1 )
+
+[node name="Label" type="Label" parent="ColorRect/HBoxContainer/HARD"]
+offset_top = 392.0
+offset_right = 420.0
+offset_bottom = 443.0
+theme = ExtResource( 1 )
+text = "Hard"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label" type="Label" parent="ColorRect/HBoxContainer"]
+offset_left = 879.0
+offset_top = 223.0
+offset_right = 879.0
+offset_bottom = 237.0

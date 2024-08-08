@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://b5oen3wl8bqa"
+path.s3tc="res://.godot/imported/Large_Office_Octafon_Andar_T_PolygonCity_Normal_01.png-03f4392baa0a79cda92468f03b31526f.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "6ebcd1d7e7c1291a78113bb8cc792a5a"
+}
+
+[deps]
+
+source_file="res://assets/predios/gltf/old/Large_Office_Octafon_Andar_T_PolygonCity_Normal_01.png"
+dest_files=["res://.godot/imported/Large_Office_Octafon_Andar_T_PolygonCity_Normal_01.png-03f4392baa0a79cda92468f03b31526f.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://assets/gltf/old/Large_Office_Octafon_Andar_T_PolygonCity_Normal_01.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

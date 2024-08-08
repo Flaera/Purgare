@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://resources/theme_general_red.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/main_menu/main_menu.gd" type="Script" id=2]
+[ext_resource path="res://resources/theme_hollow.tres" type="Theme" id=3]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.262745 )
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -70.0
+offset_right = 180.0
+offset_bottom = 255.0
+color = Color( 0, 0, 0, 0.505882 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = -128.0
+offset_right = 154.0
+offset_bottom = 128.0
+theme = ExtResource( 1 )
+alignment = 1
+
+[node name="BTN_NEW_GAME" type="Button" parent="CanvasLayer/ColorRect2/VBoxContainer"]
+offset_right = 308.0
+offset_bottom = 46.0
+theme = ExtResource( 1 )
+text = "New Game"
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect2/VBoxContainer"]
+offset_top = 50.0
+offset_right = 308.0
+offset_bottom = 101.0
+theme = ExtResource( 3 )
+
+[node name="BTN_CONTINUE" type="Button" parent="CanvasLayer/ColorRect2/VBoxContainer"]
+offset_top = 105.0
+offset_right = 308.0
+offset_bottom = 151.0
+theme = ExtResource( 1 )
+text = "Continue"
+
+[node name="Label2" type="Label" parent="CanvasLayer/ColorRect2/VBoxContainer"]
+offset_top = 155.0
+offset_right = 308.0
+offset_bottom = 206.0
+theme = ExtResource( 3 )
+
+[node name="BTN_QUIT" type="Button" parent="CanvasLayer/ColorRect2/VBoxContainer"]
+offset_top = 210.0
+offset_right = 308.0
+offset_bottom = 256.0
+theme = ExtResource( 1 )
+text = "Quit"
+
+[connection signal="pressed" from="CanvasLayer/ColorRect2/VBoxContainer/BTN_NEW_GAME" to="." method="_on_BTN_NEW_GAME_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect2/VBoxContainer/BTN_CONTINUE" to="." method="_on_BTN_CONTINUE_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect2/VBoxContainer/BTN_QUIT" to="." method="_on_BTN_QUIT_pressed"]

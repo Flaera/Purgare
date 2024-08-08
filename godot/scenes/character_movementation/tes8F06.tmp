@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2oqvp0pxu45"]
+
+[ext_resource type="PackedScene" uid="uid://dd5835fh5kifs" path="res://scenes/character_movementation/character_movementation.tscn" id="1_2acaa"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ag02j"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yv0nc"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[node name="Test" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ag02j")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_yv0nc")
+
+[node name="CharacterMovementation" parent="." instance=ExtResource("1_2acaa")]

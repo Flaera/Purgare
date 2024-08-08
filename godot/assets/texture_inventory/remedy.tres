@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://2v5vsy36tt8c"]
+
+[ext_resource type="Script" path="res://assets/texture_inventory/resource_items_inventory.gd" id="1_tbmr8"]
+[ext_resource type="Texture2D" uid="uid://bautntgmef1e6" path="res://assets/texture_inventory/inventory_seed.png" id="2_nhev4"]
+
+[resource]
+script = ExtResource("1_tbmr8")
+texture = ExtResource("2_nhev4")
+amount = 25

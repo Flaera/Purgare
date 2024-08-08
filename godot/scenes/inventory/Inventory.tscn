@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://7tbxn2o3513j"]
+
+[ext_resource type="Texture2D" uid="uid://cydfgaoijh2bq" path="res://assets/texture_inventory/inventory.png" id="1_5fuei"]
+[ext_resource type="PackedScene" uid="uid://d0ta10q2tg6en" path="res://scenes/inventory/slot.tscn" id="2_t7sl1"]
+
+[node name="Inventory" type="TextureRect"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -288.0
+offset_right = 288.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5fuei")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = -169.405
+offset_right = 215.0
+offset_bottom = 258.596
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(140, 140)
+columns = 3
+
+[node name="Slot" parent="GridContainer" instance=ExtResource("2_t7sl1")]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+
+[node name="Slot2" parent="GridContainer" instance=ExtResource("2_t7sl1")]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+
+[node name="Slot3" parent="GridContainer" instance=ExtResource("2_t7sl1")]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+
+[node name="Slot4" parent="GridContainer" instance=ExtResource("2_t7sl1")]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+
+[node name="Slot5" parent="GridContainer" instance=ExtResource("2_t7sl1")]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+
+[node name="Slot6" parent="GridContainer" instance=ExtResource("2_t7sl1")]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+
+[node name="Slot7" parent="GridContainer" instance=ExtResource("2_t7sl1")]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+
+[node name="Slot8" parent="GridContainer" instance=ExtResource("2_t7sl1")]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+
+[node name="Slot9" parent="GridContainer" instance=ExtResource("2_t7sl1")]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2

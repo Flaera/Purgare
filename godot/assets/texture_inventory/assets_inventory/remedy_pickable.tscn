@@ -52,6 +52,7 @@ _data = {
 
 [node name="RemedyPickable" type="Node3D"]
 script = ExtResource("1_feq28")
+texture = ExtResource("2_7dvdh")
 
 [node name="Area3D" type="Area3D" parent="."]
 

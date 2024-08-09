@@ -10,13 +10,13 @@ var cam_rotation = 0.0
 
 @onready var trigger_pos: Vector3 = position
 @onready var cam = get_node("Camera3D")
+@onready var finished_steps: bool = false
 
+#@export var fish_lab: Label
+#@export var farming_lab: Label
+#@export var money_lab: Label
 
-@export var fish_lab: Label
-@export var farming_lab: Label
-@export var money_lab: Label
-
-@export var steps_sfx: AudioStreamPlayer
+@export var steps_sfx: AudioStreamPlayer3D
 
 var fish_amount = 0.0
 var farming_amount = 0.0
@@ -25,6 +25,8 @@ var money_amount = 0.0
 func _ready():
 	get_node("Camera3D").current=true
 	steps_sfx.playing = false
+	MusicController.play_music_and_sfx()
+
 
 
 func move_to_point(delta):
@@ -34,13 +36,13 @@ func move_to_point(delta):
 	velocity = direction*speed
 	get_node("Mesh").look_at(target_pos,Vector3.UP,true)
 	move_and_slide()
-	
+	velocity = Vector3.ZERO
 
 
-func _process(_delta):
-	
+func _physics_process(_delta):
+	var move: bool = false
 	if (Input.is_action_just_pressed("mouse_click")):
-		print("Acionado")
+		#print("Acionado")
 		var mouse_pos = get_viewport().get_mouse_position()
 		var from = cam.project_ray_origin(mouse_pos)
 		var to = from + cam.project_ray_normal(mouse_pos) * RAY_LENGTH
@@ -51,20 +53,44 @@ func _process(_delta):
 		ray_query.collide_with_areas=true
 		ray_query.collide_with_bodies=true
 		var result = space.intersect_ray(ray_query)
-		print(result)
-		
-		get_node("NavigationAgent3D").target_position = result.position
-	
+		#print(result)
+		move = is_clicking_in_inventory(mouse_pos)
+		if (result!={}):
+			get_node("NavigationAgent3D").target_position = result.position
 	
 	if (get_node("NavigationAgent3D").is_navigation_finished()):
-		return
+		play_steps(false)
 		get_node("AnimationPlayer").pause()
-		
-	if (get_parent().get_node("CanvasLayer/ControlInventory/Inventory").visible==false):
+		return
+	if (move == false and 
+	get_parent().get_node("CanvasLayer/ControlInventory/Inventory").visible==false):
+		play_steps(true)
 		move_to_point(_delta)
 
 
-func _physics_process(delta):
+func is_clicking_in_inventory(pos: Vector2):
+	if (Input.is_action_just_pressed("mouse_click")):
+		var button = get_parent().get_node("CanvasLayer/ControlInventory/TextureButton")
+		var area: Dictionary = {"limitx_begin":button.position.x,"limitx_final":button.position.x+button.size.x,
+		"limity_begin":button.position.y,"limity_final":button.position.y+button.size.y}
+		#print("area=",area)
+		if (pos.x>=area.limitx_begin and pos.x<=area.limitx_final
+		 and pos.y>=area.limity_begin and pos.y<=area.limity_final):
+			return true
+		else: return false
+		
+
+
+func play_steps(flag_play:bool):
+	"""if (flag_play==true and finished_steps==true):
+		steps_sfx.playing=flag_play
+		flag_play=false
+		finished_steps=false"""
+	if !flag_play: steps_sfx.play() 
+	
+
+
+func _process(delta):
 	if Input.is_action_just_released("scroll_down"):
 		cam.size += 1
 	if Input.is_action_just_released("scroll_up"):
@@ -80,21 +106,21 @@ func _physics_process(delta):
 	if cam_rotation > 4 or cam_rotation < -4:
 		cam_rotation = 0.0
 	
-	if (!is_on_floor()):
-		velocity.y-=speed*delta
+	#if (!is_on_floor()):
+	#	velocity.y-=speed*delta
 		
-	if (trigger_pos - position).length() > 1:
+	#if (velocity[0]>0.0 and velocity[2]>0.0):
 		#velocity = (trigger_pos - position).normalized()*speed*delta*4
-		steps_sfx.playing = true
-	else:
+		#play_steps(true)
+	#else:
 		#velocity = Vector3.ZERO
-		steps_sfx.playing = false
+		#play_steps(false)
 		#$Dwarf_Walk_mixamo_com_New/AnimationPlayer.pause("Dwarf_Walk_mixamo_com_New")
 	#move_and_slide()
 	#position.y = clamp(position.y, 0, LIMIT)
 
 
-func get_pos(event, position):
+"""func get_pos(event, position):
 	if event is InputEventMouse:
 		if event.button_mask == MOUSE_BUTTON_MASK_LEFT:
 			trigger_pos = position
@@ -103,12 +129,12 @@ func get_pos(event, position):
 
 
 func _on_area_3d_input_event(camera, event, position, normal, shape_idx):
-	print("AQUI=")
-	get_pos(event, position)
+	#print("AQUI=")
+	get_pos(event, position)"""
 
 
 
-func fishing_click(camera, event, position, normal, shape_idx):
+"""func fishing_click(camera, event, position, normal, shape_idx):
 	if event is InputEventMouse:
 		if event.button_mask == MOUSE_BUTTON_MASK_LEFT:
 			fish_amount += 2.0
@@ -120,25 +146,29 @@ func farming_click(camera, event, position, normal, shape_idx):
 		if event.button_mask == MOUSE_BUTTON_MASK_LEFT:
 			farming_amount += 1.0
 			farming_lab.text = (str)(farming_amount)
+"""
 
-
-func money_click(camera, event, position, normal, shape_idx):
-	if event is InputEventMouse:
-		if event.button_mask == MOUSE_BUTTON_MASK_LEFT:
-			if farming_amount > 0.0:
-				money_amount += farming_amount
-				farming_amount = 0.0
-				money_lab.text = (str)(money_amount)
-				farming_lab.text = (str)(farming_amount)
-	if event is InputEventMouse:
-		if event.button_mask == MOUSE_BUTTON_MASK_LEFT:
-			if fish_amount > 0.0:
-				money_amount += fish_amount
-				fish_amount = 0.0
-				money_lab.text = (str)(money_amount)
-				fish_lab.text = (str)(fish_amount)
 
 
 func _on_texture_button_pressed():
 	var node_inventory = get_parent().get_node("CanvasLayer/ControlInventory/Inventory")
 	node_inventory.visible = !node_inventory.visible
+
+
+
+
+func _on_money_area_input_event(camera, event, position, normal, shape_idx):
+	if event is InputEventMouse:
+		if event.button_mask == MOUSE_BUTTON_MASK_LEFT:
+			var inventory = get_parent().get_node("CanvasLayer/ControlInventory/Inventory")
+			for slot in inventory.get_children():
+				if (slot.get_node("SpriteItem").texture!=null):
+					print("tex=",slot.get_node("SpriteItem"))
+
+
+func _on_money_area_mouse_entered():
+	if Input.is_action_just_pressed("mouse_click"):
+		var inventory = get_parent().get_node("CanvasLayer/ControlInventory/Inventory")
+		for slot in inventory.get_children():
+			if (slot.get_node("SpriteItem").texture!=null):
+				print("2tex=",slot.get_node("SpriteItem"))

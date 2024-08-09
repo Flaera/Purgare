@@ -2,11 +2,11 @@ extends Node3D
 
 
 
-@onready var texture = preload("res://assets/texture_inventory/inventory_remedy.png")
-
+@export var texture: Texture2D
+@export var amount: int = 1
 
 
 func _on_area_3d_body_entered(body):
 	if (body.name == "Char"):
-		get_parent().get_parent().get_node("CanvasLayer/ControlInventory/Inventory/GridContainer/Slot").add_item(texture,1)
+		get_parent().get_parent().get_node("CanvasLayer/ControlInventory/Inventory/GridContainer/Slot").add_item(texture,amount)
 		queue_free()

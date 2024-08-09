@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dycjg8j7utbmx"]
+[gd_scene load_steps=5 format=3 uid="uid://dycjg8j7utbmx"]
 
 [ext_resource type="Script" path="res://scenes/music_controller/music_controller.gd" id="1_aki4v"]
 [ext_resource type="AudioStream" uid="uid://rvf5ctngp2fk" path="res://assets/Sounds_Game_Purgare/SXF__birds.mp3" id="2_cd0m5"]
 [ext_resource type="AudioStream" uid="uid://bvr12di7bfh36" path="res://assets/Sounds_Game_Purgare/Music_gameplay_loop.wav" id="3_p23jp"]
+[ext_resource type="AudioStream" uid="uid://e176u7a2slav" path="res://assets/Sounds_Game_Purgare/SFX_menu_ocean.mp3" id="4_la6rx"]
 
 [node name="MusicController" type="Node2D"]
 script = ExtResource("1_aki4v")
@@ -13,4 +14,8 @@ volume_db = 5.0
 
 [node name="background_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_p23jp")
-volume_db = 10.0
+volume_db = 5.0
+
+[node name="menu_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_la6rx")
+volume_db = 3.0

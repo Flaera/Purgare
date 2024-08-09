@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://y3um231rjdcu"]
+
+[ext_resource type="Script" path="res://assets/texture_inventory/assets_inventory/remedy_pickable.gd" id="1_tbr4v"]
+[ext_resource type="Texture2D" uid="uid://bautntgmef1e6" path="res://assets/texture_inventory/inventory_seed.png" id="2_t0w6m"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_uie6f"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_kngh0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v5lph"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("2_t0w6m")
+
+[sub_resource type="Animation" id="Animation_032p3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y7gt0"]
+resource_name = "anim_rot_y"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 3.14159, 0), Vector3(0, 6.28319, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1aqwd"]
+_data = {
+"RESET": SubResource("Animation_032p3"),
+"anim_rot_y": SubResource("Animation_y7gt0")
+}
+
+[node name="SeedPickable" type="Node3D"]
+script = ExtResource("1_tbr4v")
+texture = ExtResource("2_t0w6m")
+amount = 3
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_uie6f")
+
+[node name="MeshRemedy" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_kngh0")
+surface_material_override/0 = SubResource("StandardMaterial3D_v5lph")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MeshRemedy"]
+libraries = {
+"": SubResource("AnimationLibrary_1aqwd")
+}
+autoplay = "anim_rot_y"
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

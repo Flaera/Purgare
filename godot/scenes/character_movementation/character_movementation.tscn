@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dd5835fh5kifs"]
+[gd_scene load_steps=9 format=3 uid="uid://dd5835fh5kifs"]
 
 [ext_resource type="Script" path="res://scenes/character_movementation/character_movementation.gd" id="1_y63hf"]
+[ext_resource type="AudioStream" uid="uid://27p1wumvqoir" path="res://assets/Sounds_Game_Purgare/SXF_step.mp3" id="2_2xa8o"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5k71x"]
 
@@ -527,8 +528,9 @@ _data = {
 "Dwarf_Walk_mixamo_com_New_0": SubResource("Animation_dmehe")
 }
 
-[node name="Char" type="CharacterBody3D"]
+[node name="Char" type="CharacterBody3D" node_paths=PackedStringArray("steps_sfx")]
 script = ExtResource("1_y63hf")
+steps_sfx = NodePath("AudioStreamPlayer3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -897,3 +899,10 @@ current = true
 size = 10.0
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.1
+target_desired_distance = 0.1
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_2xa8o")
+volume_db = 80.0
+max_db = 6.0

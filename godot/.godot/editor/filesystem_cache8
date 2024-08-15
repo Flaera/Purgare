@@ -1,6 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1723162460
-default_env.tres::Environment::7666707493161089002::1723162460::0::1::::<><>::
+::res://::1723689396
+default_env.tres::Environment::7666707493161089002::1723689396::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1722687874::0::1::::<><>::
 icon.png::CompressedTexture2D::3975468041336940258::1722630396::1723080465::1::::<><>::
 README.md::TextFile::-1::1722642538::0::1::::<><>::
@@ -18,7 +18,7 @@ inventory_system.gdextension::GDExtension::-1::1722633412::0::1::::<><>::
 ::res://addons/inventory-system/bin/macos/::1723135333
 ::res://addons/inventory-system/bin/macos/macos.framework/::1723135333
 ::res://addons/inventory-system/bin/web/::1723135333
-::res://addons/inventory-system/bin/windows/::1723152797
+::res://addons/inventory-system/bin/windows/::1723666738
 ::res://addons/inventory-system/editor/::1723135333
 constants.gd::GDScript::-1::1722633414::0::1::::<>Node<>::
 inventory-system-inspector.gd::GDScript::-1::1722633414::0::1::::<>Node<>::
@@ -1145,7 +1145,7 @@ input_helper.gd::GDScript::-1::1722633412::0::1::::InputHelper<>Resource<>::
 input_icons.gd::GDScript::-1::1722633412::0::1::::InputIcons<>Resource<>::
 interactor_ui.gd::GDScript::-1::1722633412::0::1::::InteractorUI<>Control<>::
 interactor_ui.tscn::PackedScene::8192078262325635500::1722633412::0::1::::<><>::res://addons/inventory-system-demos/ui/interactor/interactor_ui.gd<>uid://c2cuwwcpbs81y::::res://addons/inventory-system-demos/ui/interactor/default_input_icons.tres<>uid://4ateud0jxegv::::res://addons/inventory-system-demos/ui/interactor/action_message_ui.tscn
-::res://assets/::1723162859
+::res://assets/::1723661940
 1f4b2.png::CompressedTexture2D::4227585394555133591::1722674418::1723080467::1::::<><>::
 Demo.glb::PackedScene::2328703344045592286::1722638798::1723080377::1::::<><>::
 Demo_MaterialInstanceDynamic_0_SkySphereMesh_BaseColor.png::CompressedTexture2D::7108966643195127039::1722638832::1723080467::1::::<><>::
@@ -1189,7 +1189,10 @@ SK_Character_Son_01_T_PolygonTown_Normal_A.png::CompressedTexture2D::87624579716
 ::res://assets/building colision/::1723135336
 prefeitura 1.tres::BoxShape3D::7623663864388802554::1722663122::0::1::::<><>::
 prefeitura 2.tres::BoxShape3D::3706045661734240493::1722677764::0::1::::<><>::
-::res://assets/charcters/::1723135336
+::res://assets/charcters/::1723687272
+ SK_Character_Mother_with_animation_M_PolygonTown_01_A_MetallicRoughness.png::CompressedTexture2D::3814492736591683079::1723588720::1723588720::1::::<><>::
+ SK_Character_Mother_with_animation_T_PolygonTown_01_A.png::CompressedTexture2D::180280977279547634::1723588719::1723588720::1::::<><>::
+ SK_Character_Mother_with_animation_T_PolygonTown_Normal_A.png::CompressedTexture2D::8252419510877945743::1723588717::1723588720::1::::<><>::
 anim1.res::Animation::6278495580318545316::1723080368::0::1::::<><>::
 Brutal_To_Happy_Walking_mixamo_com_New.glb::PackedScene::7632508474860713286::1722643946::1723080368::1::::<><>::uid://cvpl51crma7u3::::res://assets/charcters/anim1.res
 Brutal_To_Happy_Walking_mixamo_com_New_M_PolygonCity_01_A_MetallicRoughness.png::CompressedTexture2D::1633009179501412536::1722643988::1723080470::1::::<><>::
@@ -1199,10 +1202,19 @@ Dwarf_Walk_mixamo_com_New.glb::PackedScene::2638917307818993332::1722643938::172
 Dwarf_Walk_mixamo_com_New_M_PolygonCity_01_A_MetallicRoughness.png::CompressedTexture2D::4412301835610114505::1722643988::1723080470::1::::<><>::
 Dwarf_Walk_mixamo_com_New_T_PolygonCity_01_A.png::CompressedTexture2D::3857774672331523120::1722643988::1723080470::1::::<><>::
 Dwarf_Walk_mixamo_com_New_T_PolygonCity_Normal_01.png::CompressedTexture2D::8522910076365658157::1722643990::1723080470::1::::<><>::
+SK_Character_Male_Hoodie.glb::PackedScene::6737902700712327895::1723586761::1723586997::1::::<><>::uid://bea0iqqxkvo2p::::res://assets/charcters/SK_Character_Male_Hoodie_T_PolygonCity_01_A.png<>uid://mbqqd0jo4rb::::res://assets/charcters/SK_Character_Male_Hoodie_M_PolygonCity_01_A_MetallicRoughness.png<>uid://lelvtbjq53gi::::res://assets/charcters/SK_Character_Male_Hoodie_T_PolygonCity_Normal_01.png
+SK_Character_Male_Hoodie_M_PolygonCity_01_A_MetallicRoughness.png::CompressedTexture2D::24862668900474647::1723586855::1723586855::1::::<><>::
+SK_Character_Male_Hoodie_T_PolygonCity_01_A.png::CompressedTexture2D::2668709135565324933::1723586855::1723586855::1::::<><>::
+SK_Character_Male_Hoodie_T_PolygonCity_Normal_01.png::CompressedTexture2D::781041179546998292::1723586855::1723586855::1::::<><>::
 SK_Character_Mother_02.glb::PackedScene::5825052700195095365::1722643930::1723080367::1::::<><>::
 SK_Character_Mother_02_M_PolygonTown_01_A_MetallicRoughness.png::CompressedTexture2D::4311538747847708471::1722643990::1723080464::1::::<><>::
 SK_Character_Mother_02_T_PolygonTown_01_A.png::CompressedTexture2D::6745907732252716774::1722643990::1723080464::1::::<><>::
 SK_Character_Mother_02_T_PolygonTown_Normal_A.png::CompressedTexture2D::4626875959984912::1722643992::1723080465::1::::<><>::
+sk_character_mother_with_animation2.tscn::PackedScene::977781422606345363::1723687272::0::1::::<><>::res://assets/charcters/scripts/mayor.gd<>uid://b767kudki5wli::::res://assets/charcters/SK_Character_Mother_with_animation_idle_T_PolygonTown_01_A.png<>uid://b1ymhf1618jcq::::res://assets/pngtree-fresh-carrot-vegetable-sticker-image-png-image_8855347.png<>uid://dw6m8qiv566bw::::res://assets/charcters/SK_Character_Mother_with_animation_idle_M_PolygonTown_01_A_MetallicRoughness.png<>uid://cocsivc20puay::::res://assets/charcters/SK_Character_Mother_with_animation_idle_T_PolygonTown_Normal_A.png
+SK_Character_Mother_with_animation_idle.gltf::PackedScene::6895242692525555358::1723602266::1723602273::1::::<><>::uid://b767kudki5wli::::res://assets/charcters/SK_Character_Mother_with_animation_idle_T_PolygonTown_01_A.png<>uid://dw6m8qiv566bw::::res://assets/charcters/SK_Character_Mother_with_animation_idle_M_PolygonTown_01_A_MetallicRoughness.png<>uid://cocsivc20puay::::res://assets/charcters/SK_Character_Mother_with_animation_idle_T_PolygonTown_Normal_A.png
+SK_Character_Mother_with_animation_idle_M_PolygonTown_01_A_MetallicRoughness.png::CompressedTexture2D::8768200710331453740::1723602273::1723602273::1::::<><>::
+SK_Character_Mother_with_animation_idle_T_PolygonTown_01_A.png::CompressedTexture2D::4698421247761232198::1723602272::1723602273::1::::<><>::
+SK_Character_Mother_with_animation_idle_T_PolygonTown_Normal_A.png::CompressedTexture2D::5760722233388549968::1723602270::1723602273::1::::<><>::
 SK_Character_ShopKeeper_01.glb::PackedScene::6592435994155591970::1722643930::1723080366::1::::<><>::
 SK_Character_ShopKeeper_01_M_PolygonTown_01_A_MetallicRoughness.png::CompressedTexture2D::5738988129644302533::1722644000::1723080464::1::::<><>::
 SK_Character_ShopKeeper_01_T_PolygonTown_01_A.png::CompressedTexture2D::6971843341726334800::1722644000::1723080465::1::::<><>::
@@ -1211,16 +1223,34 @@ SK_Character_Son_01.glb::PackedScene::5384898456617685985::1722643874::172308036
 SK_Character_Son_01_M_PolygonTown_01_A_MetallicRoughness.png::CompressedTexture2D::5247893753064944065::1722644008::1723080464::1::::<><>::
 SK_Character_Son_01_T_PolygonTown_01_A.png::CompressedTexture2D::5506709918097666231::1722644008::1723080465::1::::<><>::
 SK_Character_Son_01_T_PolygonTown_Normal_A.png::CompressedTexture2D::4706663290642194354::1722644010::1723080465::1::::<><>::
+::res://assets/charcters/scripts/::1723687499
+mayor.gd::GDScript::-1::1723687499::0::1::::<>Node3D<>::
+::res://assets/dialogs/::1723661298
+balon.png::CompressedTexture2D::5740477239970938629::1723604030::1723604382::1::::<><>::
+::res://assets/dialogs/dialog_mayor/::1723689751
+balons.png::CompressedTexture2D::241906088602538956::1723605859::1723605899::1::::<><>::
+balon_1.png::CompressedTexture2D::7284213493745030468::1723606122::1723606306::1::::<><>::
+balon_2.png::CompressedTexture2D::3002794388091566398::1723606136::1723606141::1::::<><>::
+balon_3.png::CompressedTexture2D::5980728276880562907::1723689632::1723689758::1::::<><>::
+balon_4.png::CompressedTexture2D::6875089987946871317::1723689750::1723689758::1::::<><>::
+::res://assets/dialogs/warning_no_seeds/::1723668161
+balon.png::CompressedTexture2D::3453270876828334821::1723668154::1723668161::1::::<><>::
+Balão_2.png::CompressedTexture2D::78092821464685390::1723661594::1723661820::1::::<><>::
 ::res://assets/hdri_maps/::1723135336
 DayEnvironmentHDRI043_4K-HDR.exr::CompressedTexture2D::8831953739380582324::1722630422::1723080507::1::::<><>::
 ::res://assets/imports/::1723135336
 Office.res::ArrayMesh::7218620071453546583::1723080370::0::1::::<><>::
 road.res::ArrayMesh::4535593737998679092::1723080369::0::1::::<><>::
-::res://assets/menu_textures/::1723162457
+::res://assets/interations/::1723689396
+plantation_zone.gd::GDScript::-1::1723689340::0::1::::<>Node3D<>::
+plantation_zone.tscn::PackedScene::7706476695061064267::1723689396::0::1::::<><>::res://assets/interations/plantation_zone.gd<>uid://bpg14qbgkvj1f::::res://assets/dialogs/warning_no_seeds/balon.png<>uid://bautntgmef1e6::::res://assets/texture_inventory/inventory_seed.png<>uid://camg73jk58784::::res://resources/theme_hollow.tres<>uid://bmjyfw4ysoomn::::res://resources/theme_general_red.tres
+::res://assets/map_and_minus_buildings/::1723585828
+map_ground_an_minus_buildings.tscn::PackedScene::1709563369786158823::1723585828::0::1::::<><>::uid://dw2unbs5vjbir::::res://assets/mapNew_T_PolygonCity_01_A.png
+::res://assets/menu_textures/::1723689394
 Balão_2.png::CompressedTexture2D::7914380132659414760::1722685072::1723080465::1::::<><>::
 Icones.png::CompressedTexture2D::3351485246851977544::1722685088::1723080465::1::::<><>::
 menu.gd::GDScript::-1::1723162291::0::1::::<>Control<>::
-menu.tscn::PackedScene::1224120997262877709::1723162457::0::1::::<><>::res://assets/menu_textures/menu.gd<>uid://c5kks1wrsmblg::::res://assets/menu_textures/Untitled-1.png
+menu.tscn::PackedScene::1224120997262877709::1723689394::0::1::::<><>::res://assets/menu_textures/menu.gd<>uid://c5kks1wrsmblg::::res://assets/menu_textures/Untitled-1.png
 Start Screen.png::CompressedTexture2D::4925093800994438674::1722686078::1723080465::1::::<><>::
 Untitled-1.png::CompressedTexture2D::6899791168675454496::1722687512::1723080465::1::::<><>::
 ::res://assets/predios/::1723135336
@@ -1319,13 +1349,13 @@ metal.tres::Resource::3887950508892492173::1722680380::0::1::::<><>::res://asset
 remedy.tres::Resource::1940310706327123128::1722680448::0::1::::<><>::res://assets/texture_inventory/resource_items_inventory.gd<>uid://bautntgmef1e6::::res://assets/texture_inventory/inventory_seed.png
 resource_items_inventory.gd::GDScript::-1::1722680448::0::1::::ItemInventory<>Node<>::
 seed.tres::Resource::4312517141821327026::1722680414::0::1::::<><>::res://assets/texture_inventory/resource_items_inventory.gd<>uid://bbhmu3ggc2hij::::res://assets/texture_inventory/inventory_remedy.png
-::res://assets/texture_inventory/assets_inventory/::1723161315
+::res://assets/texture_inventory/assets_inventory/::1723687102
 carrot_pickable.tscn::PackedScene::6374245776749335158::1723161189::0::1::::<><>::res://assets/texture_inventory/assets_inventory/remedy_pickable.gd<>uid://b1ymhf1618jcq::::res://assets/pngtree-fresh-carrot-vegetable-sticker-image-png-image_8855347.png
-fish_pickable.tscn::PackedScene::5254509497808698495::1723161315::0::1::::<><>::res://assets/texture_inventory/assets_inventory/remedy_pickable.gd<>uid://cvyxp0hsqh81k::::res://assets/pngtree-vector-illustration-of-river-freshwater-fish-gudgeon-png-image_5063735.png
+fish_pickable.tscn::PackedScene::5254509497808698495::1723574744::0::1::::<><>::res://assets/texture_inventory/assets_inventory/remedy_pickable.gd<>uid://cvyxp0hsqh81k::::res://assets/pngtree-vector-illustration-of-river-freshwater-fish-gudgeon-png-image_5063735.png
 metal_pickable.tscn::PackedScene::4287677148277173224::1723159432::0::1::::<><>::res://assets/texture_inventory/assets_inventory/remedy_pickable.gd<>uid://bojol3gylhf45::::res://assets/texture_inventory/inventory_metal.png
-remedy_pickable.gd::GDScript::-1::1723159432::0::1::::<>Node3D<>::
+remedy_pickable.gd::GDScript::-1::1723687102::0::1::::<>Node3D<>::
 remedy_pickable.tscn::PackedScene::1993367467303482874::1723159395::0::1::::<><>::res://assets/texture_inventory/assets_inventory/remedy_pickable.gd<>uid://bbhmu3ggc2hij::::res://assets/texture_inventory/inventory_remedy.png
-seed_pickable.tscn::PackedScene::1743572056398012540::1723159445::0::1::::<><>::res://assets/texture_inventory/assets_inventory/remedy_pickable.gd<>uid://bautntgmef1e6::::res://assets/texture_inventory/inventory_seed.png
+seed_pickable.tscn::PackedScene::1743572056398012540::1723683069::0::1::::<><>::res://assets/texture_inventory/assets_inventory/remedy_pickable.gd<>uid://bautntgmef1e6::::res://assets/texture_inventory/inventory_seed.png
 ::res://assets/texture_rect_difficult/::1723135337
 texture_rec_difficult.png::CompressedTexture2D::8752190694620592875::1722630430::1723080467::1::::<><>::
 ::res://example/::1723135337
@@ -1516,9 +1546,9 @@ item_armour_silver.png::CompressedTexture2D::1560561598343858558::1722632640::17
 item_book_blue.png::CompressedTexture2D::843337291627351538::1722632640::1723080465::1::::<><>::
 item_key.png::CompressedTexture2D::3061303305556543008::1722632640::1723080465::1::::<><>::
 item_scroll_blue.png::CompressedTexture2D::4770035527959100396::1722632640::1723080465::1::::<><>::
-::res://resources/::1723135337
-theme_general_red.tres::Theme::3248733545360049581::1722630430::0::1::::<><>::res://resources/setting_red_color/red_styleboxflat.tres<>uid://cg1m84cbah70a::::res://fonts/LinLibertine_aBS.ttf
-theme_hollow.tres::Theme::-1::1722630430::0::1::::<><>::
+::res://resources/::1723668662
+theme_general_red.tres::Theme::3248733545360049581::1723668662::0::1::::<><>::res://resources/setting_red_color/red_styleboxflat.tres<>uid://cg1m84cbah70a::::res://fonts/LinLibertine_aBS.ttf<>uid://2sx63x0iyb2c::::res://example/theme/font/ttf/Abaddon Light.ttf
+theme_hollow.tres::Theme::4798036832849298151::1723668662::0::1::::<><>::
 ::res://resources/setting_red_color/::1723135337
 red_styleboxflat.tres::StyleBoxFlat::-1::1722630432::0::1::::<><>::
 ::res://scenes/::1723135329
@@ -1527,23 +1557,23 @@ ResidentialBuilding1.gd::GDScript::-1::1722630432::0::1::::<>RigidBody3D<>::
 ResidentialBuilding1.tscn::PackedScene::3376091496983227702::1722630432::0::1::::<><>::uid://cudiv4qlgq1qh::::res://assets/predios/gltf-20240801T231318Z-001/gltf/M_PolygonCity_01_A.material<>res://scenes/buildings/ResidentialBuilding1.gd
 ::res://scenes/camps/::1723135329
 selector.gd::GDScript::-1::1722630432::0::1::::<>CharacterBody3D<>::
-::res://scenes/character_movementation/::1723162459
-character_movementation.gd::GDScript::-1::1723160483::0::1::::<>CharacterBody3D<>::
-character_movementation.tscn::PackedScene::7433815161388890924::1723156609::0::1::::<><>::res://scenes/character_movementation/character_movementation.gd<>uid://27p1wumvqoir::::res://assets/Sounds_Game_Purgare/SXF_step.mp3
+::res://scenes/character_movementation/::1723689396
+character_movementation.gd::GDScript::-1::1723687102::0::1::::<>CharacterBody3D<>::
+character_movementation.tscn::PackedScene::7433815161388890924::1723687272::0::1::::<><>::res://scenes/character_movementation/character_movementation.gd<>uid://27p1wumvqoir::::res://assets/Sounds_Game_Purgare/SXF_step.mp3<>uid://bu7y8q6kejkwu::::res://assets/charcters/Dwarf_Walk_mixamo_com_New_T_PolygonCity_01_A.png<>uid://b34l74m0gg8tp::::res://assets/charcters/Dwarf_Walk_mixamo_com_New_M_PolygonCity_01_A_MetallicRoughness.png<>uid://dtotc32rpoigb::::res://assets/charcters/Dwarf_Walk_mixamo_com_New_T_PolygonCity_Normal_01.png
 money_area.gd::GDScript::-1::1722677914::0::1::::<>Area3D<>::
 praça.gd::GDScript::-1::1722678266::0::1::::<>Node3D<>::
 viewport.tscn::PackedScene::2204157517044402980::1722666796::0::1::::<><>::uid://dojg2r2dxd0dg::::res://scenes/character_movementation/world.tscn
-world.tscn::PackedScene::8160898714964186104::1723162459::0::1::::<><>::uid://dd5835fh5kifs::::res://scenes/character_movementation/character_movementation.tscn<>uid://dhh2s1pkgpwyk::::res://default_env.tres<>uid://cdvaqjs5mqpk4::::res://assets/Demo_T_PolygonCity_01_A.png<>uid://t0b55ferjaai::::res://assets/Demo_M_PolygonCity_01_A_MetallicRoughness.png<>uid://20455wd4j61r::::res://assets/Demo_T_PolygonCity_Normal_01.png<>uid://dndawlrnuy8kh::::res://assets/Demo_T_PolygonCity_04_A.png<>uid://4kqxs3fupkqp::::res://assets/Demo_T_PolygonCity_02_A.png<>uid://dhvcg3rj2ql3x::::res://assets/Demo_T_PolygonCity_03_A.png<>uid://dp5cy7knp0icq::::res://assets/Demo_T_PolygonCity_BillboardAds.png<>uid://bxj0r4tbaabp6::::res://assets/Demo_T_PolygonCity_02_C.png<>uid://mf3e5a2uemaa::::res://assets/Demo_T_PolygonCity_01_B.png<>uid://bs501lymiopyu::::res://assets/Demo_T_PolygonCity_03_C.png<>uid://bl368wismap2m::::res://assets/Demo_T_PolygonCity_01_C.png<>uid://fxooroqlqiav::::res://assets/mapNew.glb<>res://scenes/character_movementation/praça.gd<>uid://dgu7vokecft0u::::res://assets/building colision/prefeitura 1.tres<>uid://bs2ibbmi2iux6::::res://assets/building colision/prefeitura 2.tres<>uid://3nuqaoj6j1q1::::res://assets/texture_inventory/assets_inventory/remedy_pickable.tscn<>uid://b1ymhf1618jcq::::res://assets/pngtree-fresh-carrot-vegetable-sticker-image-png-image_8855347.png<>uid://b2c8ofed5tehs::::res://assets/texture_inventory/assets_inventory/metal_pickable.tscn<>uid://cvyxp0hsqh81k::::res://assets/pngtree-vector-illustration-of-river-freshwater-fish-gudgeon-png-image_5063735.png<>uid://y3um231rjdcu::::res://assets/texture_inventory/assets_inventory/seed_pickable.tscn<>uid://7kquutt2hxxi::::res://assets/pngtree-rounded-rectangle-with-realistic-shadow-png-image_4655004.png<>uid://cg4laek23ng4f::::res://assets/texture_inventory/assets_inventory/fish_pickable.tscn<>uid://b1h4yje207520::::res://assets/1f4b2.png<>uid://7tbxn2o3513j::::res://scenes/inventory/Inventory.tscn<>uid://cw2y5qsdfe7t7::::res://assets/texture_inventory/assets_inventory/carrot_pickable.tscn<>uid://dhgj54seivm44::::res://assets/texture_inventory/bag_asset.png
-::res://scenes/inventory/::1723152244
-Inventory.tscn::PackedScene::2285368689184745689::1723152244::0::1::::<><>::uid://cydfgaoijh2bq::::res://assets/texture_inventory/inventory.png<>uid://d0ta10q2tg6en::::res://scenes/inventory/slot.tscn
-slot.gd::GDScript::-1::1723083211::0::1::::<>Control<>::
-slot.tscn::PackedScene::8953254089051818705::1722664356::0::1::::<><>::uid://cg1m84cbah70a::::res://fonts/LinLibertine_aBS.ttf<>res://scenes/inventory/slot.gd<>uid://ccvpfklt51uva::::res://assets/texture_inventory/inventory_slot_bg.png
+world.tscn::PackedScene::8160898714964186104::1723689396::0::1::::<><>::uid://dd5835fh5kifs::::res://scenes/character_movementation/character_movementation.tscn<>uid://dhh2s1pkgpwyk::::res://default_env.tres<>uid://cdvaqjs5mqpk4::::res://assets/Demo_T_PolygonCity_01_A.png<>uid://t0b55ferjaai::::res://assets/Demo_M_PolygonCity_01_A_MetallicRoughness.png<>uid://20455wd4j61r::::res://assets/Demo_T_PolygonCity_Normal_01.png<>uid://dndawlrnuy8kh::::res://assets/Demo_T_PolygonCity_04_A.png<>uid://4kqxs3fupkqp::::res://assets/Demo_T_PolygonCity_02_A.png<>uid://dhvcg3rj2ql3x::::res://assets/Demo_T_PolygonCity_03_A.png<>uid://dp5cy7knp0icq::::res://assets/Demo_T_PolygonCity_BillboardAds.png<>uid://bxj0r4tbaabp6::::res://assets/Demo_T_PolygonCity_02_C.png<>uid://mf3e5a2uemaa::::res://assets/Demo_T_PolygonCity_01_B.png<>uid://bs501lymiopyu::::res://assets/Demo_T_PolygonCity_03_C.png<>uid://bl368wismap2m::::res://assets/Demo_T_PolygonCity_01_C.png<>uid://fxooroqlqiav::::res://assets/mapNew.glb<>uid://ymei2k8slfb0::::res://assets/map_and_minus_buildings/map_ground_an_minus_buildings.tscn<>res://scenes/character_movementation/praça.gd<>uid://dgu7vokecft0u::::res://assets/building colision/prefeitura 1.tres<>uid://bs2ibbmi2iux6::::res://assets/building colision/prefeitura 2.tres<>uid://3nuqaoj6j1q1::::res://assets/texture_inventory/assets_inventory/remedy_pickable.tscn<>uid://b1ymhf1618jcq::::res://assets/pngtree-fresh-carrot-vegetable-sticker-image-png-image_8855347.png<>uid://b2c8ofed5tehs::::res://assets/texture_inventory/assets_inventory/metal_pickable.tscn<>uid://cvyxp0hsqh81k::::res://assets/pngtree-vector-illustration-of-river-freshwater-fish-gudgeon-png-image_5063735.png<>uid://y3um231rjdcu::::res://assets/texture_inventory/assets_inventory/seed_pickable.tscn<>uid://7kquutt2hxxi::::res://assets/pngtree-rounded-rectangle-with-realistic-shadow-png-image_4655004.png<>uid://cg4laek23ng4f::::res://assets/texture_inventory/assets_inventory/fish_pickable.tscn<>uid://b1h4yje207520::::res://assets/1f4b2.png<>uid://7tbxn2o3513j::::res://scenes/inventory/Inventory.tscn<>uid://dhgj54seivm44::::res://assets/texture_inventory/bag_asset.png<>uid://n6v6givse3b8::::res://assets/charcters/sk_character_mother_with_animation2.tscn<>uid://dh2csskai2awh::::res://assets/interations/plantation_zone.tscn
+::res://scenes/inventory/::1723687272
+Inventory.tscn::PackedScene::2285368689184745689::1723687272::0::1::::<><>::uid://cydfgaoijh2bq::::res://assets/texture_inventory/inventory.png<>uid://d0ta10q2tg6en::::res://scenes/inventory/slot.tscn
+slot.gd::GDScript::-1::1723483544::0::1::::<>Control<>::
+slot.tscn::PackedScene::8953254089051818705::1723683069::0::1::::<><>::uid://cg1m84cbah70a::::res://fonts/LinLibertine_aBS.ttf<>res://scenes/inventory/slot.gd<>uid://ccvpfklt51uva::::res://assets/texture_inventory/inventory_slot_bg.png
 ::res://scenes/main_menu/::1723135329
 main_menu.gd::GDScript::-1::1722630432::0::1::::<>Control<>::
 main_menu.tscn::PackedScene::-1::1722630432::0::1::::<><>::res://resources/theme_general_red.tres<>res://scenes/main_menu/main_menu.gd<>res://resources/theme_hollow.tres
-::res://scenes/music_controller/::1723162460
+::res://scenes/music_controller/::1723163190
 music_controller.gd::GDScript::-1::1723162291::0::1::::<>Node2D<>::
-music_controller.tscn::PackedScene::8848481970253730635::1723162460::0::1::::<><>::res://scenes/music_controller/music_controller.gd<>uid://rvf5ctngp2fk::::res://assets/Sounds_Game_Purgare/SXF__birds.mp3<>uid://bvr12di7bfh36::::res://assets/Sounds_Game_Purgare/Music_gameplay_loop.wav<>uid://e176u7a2slav::::res://assets/Sounds_Game_Purgare/SFX_menu_ocean.mp3
+music_controller.tscn::PackedScene::8848481970253730635::1723163190::0::1::::<><>::res://scenes/music_controller/music_controller.gd<>uid://rvf5ctngp2fk::::res://assets/Sounds_Game_Purgare/SXF__birds.mp3<>uid://bvr12di7bfh36::::res://assets/Sounds_Game_Purgare/Music_gameplay_loop.wav<>uid://e176u7a2slav::::res://assets/Sounds_Game_Purgare/SFX_menu_ocean.mp3
 ::res://scenes/selector_difficult/::1723135329
 select_dificult.tscn::PackedScene::-1::1722630432::0::1::::<><>::res://resources/theme_general_red.tres
 ::res://tests/::1723135330

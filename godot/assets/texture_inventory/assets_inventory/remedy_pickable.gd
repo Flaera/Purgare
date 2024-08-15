@@ -7,6 +7,6 @@ extends Node3D
 
 
 func _on_area_3d_body_entered(body):
-	if (body.name == "Char"):
+	if (body.name == "Player"):
 		get_parent().get_parent().get_node("CanvasLayer/ControlInventory/Inventory/GridContainer/Slot").add_item(texture,amount)
 		queue_free()

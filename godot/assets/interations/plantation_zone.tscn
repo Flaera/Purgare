@@ -1,0 +1,161 @@
+[gd_scene load_steps=16 format=3 uid="uid://dh2csskai2awh"]
+
+[ext_resource type="Script" path="res://assets/interations/plantation_zone.gd" id="1_by7uf"]
+[ext_resource type="Texture2D" uid="uid://bpg14qbgkvj1f" path="res://assets/dialogs/warning_no_seeds/balon.png" id="1_x26pm"]
+[ext_resource type="Texture2D" uid="uid://bautntgmef1e6" path="res://assets/texture_inventory/inventory_seed.png" id="2_jin8o"]
+[ext_resource type="Theme" uid="uid://camg73jk58784" path="res://resources/theme_hollow.tres" id="4_mtlbl"]
+[ext_resource type="Theme" uid="uid://bmjyfw4ysoomn" path="res://resources/theme_general_red.tres" id="5_4jynw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8b1xy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pfq61"]
+transparency = 1
+albedo_color = Color(1, 0.356863, 1, 0.223529)
+
+[sub_resource type="Animation" id="Animation_0fe2l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:surface_material_override/0:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.356863, 1, 0.223529)]
+}
+
+[sub_resource type="Animation" id="Animation_mvyu3"]
+resource_name = "plantation_interative_cicle_anim"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:surface_material_override/0:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.356863, 1, 0.223529), Color(0, 0.356863, 1, 0.223529), Color(1, 0.356863, 1, 0.223529)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o0qdo"]
+_data = {
+"RESET": SubResource("Animation_0fe2l"),
+"plantation_interative_cicle_anim": SubResource("Animation_mvyu3")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bnl3f"]
+size = Vector3(6.18449, 0.930023, 3.7843)
+
+[sub_resource type="BoxMesh" id="BoxMesh_c3i0i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ssedv"]
+albedo_color = Color(0.60137, 0.320118, 0.0992833, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_m6gik"]
+size = Vector2(3, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3fllh"]
+transparency = 1
+albedo_texture = ExtResource("1_x26pm")
+billboard_mode = 1
+
+[node name="PlantationZone" type="Node3D"]
+transform = Transform3D(-0.956305, 0, -0.292372, 0, 1, 0, 0.292372, 0, -0.956305, 0, 0, 0)
+script = ExtResource("1_by7uf")
+texture_seed = ExtResource("2_jin8o")
+
+[node name="InterativeMeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.54311, 0, 1.78493, 0, 1, 0, -1.08324, 0, -5.83824, 0, 0, 0)
+mesh = SubResource("BoxMesh_8b1xy")
+skeleton = NodePath("../PlantationArea3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_pfq61")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InterativeMeshInstance3D"]
+libraries = {
+"": SubResource("AnimationLibrary_o0qdo")
+}
+autoplay = "plantation_interative_cicle_anim"
+
+[node name="PlantationArea3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0500708, -0.689507, 0.163774)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlantationArea3D"]
+transform = Transform3D(-0.292372, 0, -0.956305, 0, 1, 0, 0.956305, 0, -0.292372, 0.065362, 0.74259, -0.17009)
+shape = SubResource("BoxShape3D_bnl3f")
+
+[node name="PlatationMeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.54092, 0, -1.73363, 0, 1, 0, 1.04887, 0, 5.85264, 0, -0.701106, 0)
+visible = false
+mesh = SubResource("BoxMesh_c3i0i")
+surface_material_override/0 = SubResource("StandardMaterial3D_ssedv")
+
+[node name="WarningNoSeeds" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.20494, 0)
+visible = false
+mesh = SubResource("QuadMesh_m6gik")
+surface_material_override/0 = SubResource("StandardMaterial3D_3fllh")
+
+[node name="PlantingWarningControl" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 122.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlantingWarningControl"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -283.0
+offset_right = 283.0
+offset_bottom = 67.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="PlantingWarningControl/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_mtlbl")
+theme_override_font_sizes/font_size = 29
+text = "Plantando... Não saia do local."
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="PlantingWarningControl/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_4jynw")
+
+[node name="HarvestVBoxContainer" type="VBoxContainer" parent="PlantingWarningControl"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -283.0
+offset_right = 283.0
+offset_bottom = 67.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="PlantingWarningControl/HarvestVBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_mtlbl")
+theme_override_font_sizes/font_size = 29
+text = "Espere a colheita."
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="PlantingWarningControl/HarvestVBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_4jynw")
+
+[node name="PositionCastPickable" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.344118, 0)
+
+[connection signal="body_entered" from="PlantationArea3D" to="." method="_on_plantation_area_3d_body_entered"]
+[connection signal="body_exited" from="PlantationArea3D" to="." method="_on_plantation_area_3d_body_exited"]

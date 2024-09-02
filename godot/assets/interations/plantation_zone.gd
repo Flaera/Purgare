@@ -66,7 +66,8 @@ func _on_plantation_area_3d_body_entered(body):
 		get_node("PlantingWarningControl/VBoxContainer").visible=true
 	elif body.name=="Player" and amount_seeds<=1 and can_planting==true:
 		get_node("WarningNoSeeds").visible=true
-	get_node("PlantingWarningControl").visible=!get_node("PlantingWarningControl").visible
+	if ((body.name=="Player") and (can_planting==true or in_harvest==true)):
+		get_node("PlantingWarningControl").visible=!get_node("PlantingWarningControl").visible
 		
 
 

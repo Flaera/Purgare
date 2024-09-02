@@ -14,6 +14,7 @@ var cam_rotation = 0.0
 @onready var flag_mouse_in_inventory: bool = false
 @onready var money_amount: float = 0.0
 @onready var money_lab: Label = get_parent().get_node("CanvasLayer/Control/money_label")
+@onready var smooth_anim: float = 0.0
 #@export var fish_lab: Label
 #@export var farming_lab: Label
 
@@ -29,17 +30,21 @@ func _ready():
 	steps_sfx.playing = false
 	MusicController.play_music_and_sfx()
 	#get_parent().get_node("interação/ SK_Character_Mother_with_animation/AnimationPlayer").play("idle_animation")
+	get_node("AnimationPlayer").play("Dwarf_idle")
 
 
 
 func move_to_point(delta):
 	var target_pos = get_node("NavigationAgent3D").get_next_path_position()
 	var direction = global_position.direction_to(target_pos)
-	get_node("AnimationPlayer").play("Dwarf_Walk_mixamo_com_New_0")
+	var node_path = "SKEL_Character_City"
+	get_node(node_path).rotation.y = lerp(get_node(node_path).rotation.y,atan2(direction.x, direction.z), delta*15)
 	velocity = direction*speed
-	get_node("Mesh").look_at(target_pos,Vector3.UP,true)
+	#get_node("Mesh").look_at(target_pos,Vector3.UP,true)
 	move_and_slide()
 	velocity = Vector3.ZERO
+	return direction
+	
 
 
 func _physics_process(_delta):
@@ -58,16 +63,25 @@ func _physics_process(_delta):
 		#print(result)
 		if (result!={}):
 			get_node("NavigationAgent3D").target_position = result.position
-	
+	var blend_factor = 15
+	var parameter_path = "parameters/Blend2/blend_amount"
 	if (get_node("NavigationAgent3D").is_navigation_finished()):
 		play_steps(false)
-		get_node("AnimationPlayer").pause()
+		#get_node("AnimationPlayer").play("Dwarf_idle")
+		smooth_anim = lerp(smooth_anim, 0.0, _delta*blend_factor)
+		print("STOP",smooth_anim)
+		#if (smooth_anim.x<0.0):smooth_anim.x=1.0
+		get_node("AnimationTree").set(parameter_path,abs(smooth_anim))
 		return
 	if (flag_mouse_in_inventory==false):
 		play_steps(true)
-		move_to_point(_delta)
-		#print("flag=",flag_mouse_in_inventory)
-	
+		var vector_pre = move_to_point(_delta)
+		smooth_anim = lerp(smooth_anim,vector_pre.x+vector_pre.z,_delta*blend_factor)
+		print("GO",vector_pre)
+		#if (smooth_anim.x<0.0):smooth_anim.x=1.0
+		get_node("AnimationTree").set(parameter_path,abs(smooth_anim))
+		
+
 
 
 func play_steps(flag_play:bool):
@@ -158,4 +172,3 @@ func _on_money_area_input_event(camera, event, position, normal, shape_idx):
 
 func _on_inventory_visibility_changed():
 	flag_mouse_in_inventory=!flag_mouse_in_inventory
-

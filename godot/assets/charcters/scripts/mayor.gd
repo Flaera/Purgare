@@ -12,8 +12,11 @@ extends Node3D
 
 
 @export var texture_carrot: Texture2D
-
-
+#@export var texture0: Texture2D
+#@export var texture1: Texture2D
+#@export var texture2: Texture2D
+#@export var texture3: Texture2D
+@export var amount_money_by_item: int
 
 func change_tex(tex: Texture2D):
 	var node_tex=get_node("MeshInstance3D")
@@ -30,10 +33,10 @@ func _process(delta):
 	timer_view_mensage+=delta
 	if (timer_view_mensage<max_timer_mensage/2.0):
 		if (state_dialog==0):
-			print("AQUI1=",state_dialog)
+			#print("AQUI1=",state_dialog)
 			change_tex(texture0)
 		elif (state_dialog==1):
-			print("AQUI2=",state_dialog)
+			#print("AQUI2=",state_dialog)
 			change_tex(texture2)
 	elif (timer_view_mensage>=max_timer_mensage/2.0):
 		if (state_dialog==0):
@@ -50,12 +53,20 @@ func _on_mayor_area_3d_body_entered(body):
 	var node_inventory = get_parent().get_parent().get_node("CanvasLayer/ControlInventory/Inventory/GridContainer")
 	for slot in node_inventory.get_children():
 		if (slot.get_node("SpriteItem").texture==texture_carrot):
-			get_parent().get_parent().get_node("Player").money_amount+=150*int(slot.get_node("Label").text)
+			var res = ResourceLoader.load("res://resources/quests.tres")
+			if (res.quest_mayor==2):
+				res.quest_mayor = 3
+				ResourceSaver.save(res,"res://resources/quests.tres")
+			get_parent().get_parent().get_node("Player").money_amount+=amount_money_by_item*int(slot.get_node("Label").text)
 			slot.get_node("SpriteItem").texture=null
 			slot.get_node("Label").text=""
 			state_dialog = 1
 			break
 	if (body.name=="Player"):
+		var res = ResourceLoader.load("res://resources/quests.tres")
+		if (res.quest_mayor<1):
+			res.quest_mayor = 1
+			ResourceSaver.save(res,"res://resources/quests.tres")
 		timer_view_mensage = 0.0
 		var node_mesh = get_node("MeshInstance3D")
 		node_mesh.visible=true

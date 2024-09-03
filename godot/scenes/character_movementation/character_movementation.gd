@@ -15,6 +15,7 @@ var cam_rotation = 0.0
 @onready var money_amount: float = 0.0
 @onready var money_lab: Label = get_parent().get_node("CanvasLayer/Control/money_label")
 @onready var smooth_anim: float = 0.0
+@onready var texture_metal: Texture2D = preload("res://assets/texture_inventory/inventory_metal.png")
 #@export var fish_lab: Label
 #@export var farming_lab: Label
 
@@ -44,10 +45,31 @@ func move_to_point(delta):
 	move_and_slide()
 	velocity = Vector3.ZERO
 	return direction
+
+
+func getMetalFromCar(_delta: float):
+	var bodies = get_node("MetalArea3D").get_overlapping_bodies()
 	
+	for body in bodies:
+		
+		if (body.is_in_group("car")):
+			#print("car=",body)
+			body.get_node("ControlCarUI").visible=true
+			body.get_node("ControlCarUI/VBoxContainer/ProgressBar").value+=10*_delta
+			if (body.get_node("ControlCarUI/VBoxContainer/ProgressBar").value>=100):
+				body.get_node("ControlCarUI").visible=false
+				body.get_node("ControlCarUI/VBoxContainer/ProgressBar").value=0.0
+				var inventory_node = get_parent().get_node("CanvasLayer/ControlInventory/Inventory/GridContainer")
+				for slot in inventory_node.get_children():
+					if (slot.get_node("SpriteItem").texture==null or slot.get_node("SpriteItem").texture==texture_metal):
+						slot.get_node("SpriteItem").texture=texture_metal
+						slot.get_node("Label").text = str(2+int(slot.get_node("Label").text))
+						break
 
 
 func _physics_process(_delta):
+	getMetalFromCar(_delta)
+	
 	if (Input.is_action_just_pressed("mouse_click")):
 		#print("Acionado")
 		var mouse_pos = get_viewport().get_mouse_position()
@@ -69,7 +91,7 @@ func _physics_process(_delta):
 		play_steps(false)
 		#get_node("AnimationPlayer").play("Dwarf_idle")
 		smooth_anim = lerp(smooth_anim, 0.0, _delta*blend_factor)
-		print("STOP",smooth_anim)
+		#print("STOP",smooth_anim)
 		#if (smooth_anim.x<0.0):smooth_anim.x=1.0
 		get_node("AnimationTree").set(parameter_path,abs(smooth_anim))
 		return
@@ -77,7 +99,7 @@ func _physics_process(_delta):
 		play_steps(true)
 		var vector_pre = move_to_point(_delta)
 		smooth_anim = lerp(smooth_anim,vector_pre.x+vector_pre.z,_delta*blend_factor)
-		print("GO",vector_pre)
+		#print("GO",vector_pre)
 		#if (smooth_anim.x<0.0):smooth_anim.x=1.0
 		get_node("AnimationTree").set(parameter_path,abs(smooth_anim))
 		
@@ -91,6 +113,41 @@ func play_steps(flag_play:bool):
 		finished_steps=false"""
 	if !flag_play: steps_sfx.play() 
 	
+
+
+func board_quests():
+	var res = ResourceLoader.load("res://resources/quests.tres")
+	if (res.quest_mayor==0):
+		#for quest in get_node("CanvasLayer/Control/VBoxContainer/VBoxContainer").get_children():
+		#	quest.visible=false
+		get_node("CanvasLayer/Control/VBoxContainer/VBoxContainer/MayorLabel2").visible=true
+	elif(res.quest_mayor==1):
+		get_node("CanvasLayer/Control/VBoxContainer/VBoxContainer/MayorLabel2").visible=false
+		get_node("CanvasLayer/Control/VBoxContainer/VBoxContainer/MayorLabel_planting_in_praca").visible=true
+	elif (res.quest_mayor==2):
+		get_node("CanvasLayer/Control/VBoxContainer/VBoxContainer/MayorLabel_planting_in_praca").visible=false
+		get_node("CanvasLayer/Control/VBoxContainer/VBoxContainer/MayorLabel_send_carrot_at_mayor").visible=true
+	elif (res.quest_mayor==3):
+		get_node("CanvasLayer/Control/VBoxContainer/VBoxContainer/MayorLabel_send_carrot_at_mayor").visible=false
+	
+	
+	if (res.quest_mechanic==0):
+		#for quest in get_node("CanvasLayer/Control/VBoxContainer/VBoxContainer").get_children():
+		#	quest.visible=false
+		get_node("CanvasLayer/Control/VBoxContainer/VBoxContainer/MechanicLabel3").visible=true
+	elif(res.quest_mechanic==1):
+		get_node("CanvasLayer/Control/VBoxContainer/VBoxContainer/MechanicLabel3").visible=false
+		get_node("CanvasLayer/Control/VBoxContainer/VBoxContainer/Mechanic_get_metal").visible=true
+	elif (res.quest_mechanic==2):
+		get_node("CanvasLayer/Control/VBoxContainer/VBoxContainer/Mechanic_get_metal").visible=false
+		
+	if (res.quest_mechanic==2 and res.quest_mayor==3):
+		get_node("CanvasLayer/Control/VBoxContainer/VBoxContainer/ship_first").visible=true
+		
+		#for quest in get_node("CanvasLayer/Control/VBoxContainer/VBoxContainer").get_children():
+		#	quest.visible=false
+	
+
 
 
 func _process(delta):
@@ -122,6 +179,9 @@ func _process(delta):
 		#$Dwarf_Walk_mixamo_com_New/AnimationPlayer.pause("Dwarf_Walk_mixamo_com_New")
 	#move_and_slide()
 	#position.y = clamp(position.y, 0, LIMIT)
+	
+	board_quests()
+		
 
 
 """func get_pos(event, position):
@@ -172,3 +232,13 @@ func _on_money_area_input_event(camera, event, position, normal, shape_idx):
 
 func _on_inventory_visibility_changed():
 	flag_mouse_in_inventory=!flag_mouse_in_inventory
+
+
+func _on_car_area_3d_area_exited(area: Area3D) -> void:
+	if (area.name=="MetalArea3D"):
+		var cars = area.get_parent().get_parent().get_node("map_base/CarsNode3D").get_children()
+		for car in cars:
+			if (car.get_node("StaticBody3D/ControlCarUI").visible==true):
+				car.get_node("StaticBody3D/ControlCarUI").visible=false
+				car.get_node("StaticBody3D/ControlCarUI/VBoxContainer/ProgressBar").value=0.0
+			

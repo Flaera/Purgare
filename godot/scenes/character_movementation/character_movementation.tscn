@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=4 uid="uid://dd5835fh5kifs"]
+[gd_scene load_steps=20 format=4 uid="uid://dd5835fh5kifs"]
 
 [ext_resource type="Script" path="res://scenes/character_movementation/character_movementation.gd" id="1_y63hf"]
 [ext_resource type="AudioStream" uid="uid://27p1wumvqoir" path="res://assets/Sounds_Game_Purgare/SXF_step.mp3" id="2_2xa8o"]
 [ext_resource type="Texture2D" uid="uid://0hb7hoiw50q2" path="res://scenes/character_movementation/anims_walk_and_idle_v2_T_PolygonCity_01_A.png" id="3_jocin"]
 [ext_resource type="Texture2D" uid="uid://dakuiscirhm4q" path="res://scenes/character_movementation/anims_walk_and_idle_v2_M_PolygonCity_01_A_MetallicRoughness.png" id="4_e8e6n"]
 [ext_resource type="Texture2D" uid="uid://dwrixvt54m3bi" path="res://scenes/character_movementation/anims_walk_and_idle_v2_T_PolygonCity_Normal_01.png" id="5_psv0u"]
+[ext_resource type="Theme" uid="uid://cxlx1v7q38q8l" path="res://resources/theme_quests.tres" id="6_vi7je"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5k71x"]
 
@@ -2686,6 +2687,9 @@ nodes/Blend2/node = SubResource("AnimationNodeBlend2_i2v8x")
 nodes/Blend2/position = Vector2(-20, 100)
 node_connections = [&"Blend2", 0, &"Animation", &"Blend2", 1, &"Animation 2", &"output", 0, &"Blend2"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_278cf"]
+radius = 1.12315
+
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("steps_sfx")]
 script = ExtResource("1_y63hf")
 steps_sfx = NodePath("AudioStreamPlayer3D")
@@ -2731,7 +2735,7 @@ bones/2/parent = 1
 bones/2/rest = Transform3D(0.198365, -0.980128, -1.00959e-07, -0.980128, -0.198365, 2.06071e-07, -2.22003e-07, 5.80758e-08, -1, -0.103933, -2.04891e-08, 3.0419e-08)
 bones/2/enabled = true
 bones/2/position = Vector3(-0.103933, -2.04891e-08, 3.0419e-08)
-bones/2/rotation = Quaternion(0.770921, -0.636846, 0.00073797, -0.0103605)
+bones/2/rotation = Quaternion(0.7563, -0.654159, -0.00108552, -0.00918981)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/name = "spine_02"
 bones/3/parent = 2
@@ -2752,7 +2756,7 @@ bones/5/parent = 4
 bones/5/rest = Transform3D(0.996517, 0.0833939, 1.68137e-07, -0.0833939, 0.996517, 6.48657e-08, -1.62142e-07, -7.86613e-08, 1, 1.67638e-08, 0.11189, -1.20747e-08)
 bones/5/enabled = true
 bones/5/position = Vector3(1.67638e-08, 0.11189, -1.20747e-08)
-bones/5/rotation = Quaternion(0.00474534, -0.0105242, -0.0261675, 0.999591)
+bones/5/rotation = Quaternion(0.00352453, -0.0107661, -0.00289924, 0.999932)
 bones/5/scale = Vector3(1, 1, 1)
 bones/6/name = "head"
 bones/6/parent = 5
@@ -2779,8 +2783,8 @@ bones/9/name = "clavicle_l"
 bones/9/parent = 4
 bones/9/rest = Transform3D(0.0820333, -0.467129, 0.880376, -0.996564, -0.0486075, 0.0670685, 0.0114631, -0.882852, -0.469511, 0.0419146, 0.0580117, -0.0744716)
 bones/9/enabled = true
-bones/9/position = Vector3(0.0389931, 0.0742045, -0.0744361)
-bones/9/rotation = Quaternion(0.640255, -0.518901, 0.445015, -0.350395)
+bones/9/position = Vector3(0.0364023, 0.0885643, -0.0744047)
+bones/9/rotation = Quaternion(0.652446, -0.503207, 0.43776, -0.35981)
 bones/9/scale = Vector3(1, 1, 1)
 bones/10/name = "UpperArm_L"
 bones/10/parent = 9
@@ -2794,7 +2798,7 @@ bones/11/parent = 10
 bones/11/rest = Transform3D(0.996591, -0.0822278, 0.00672417, 0.0825023, 0.993276, -0.0812231, -1.63913e-07, 0.0815009, 0.996673, 0.00144917, 0.339474, -0.00143628)
 bones/11/enabled = true
 bones/11/position = Vector3(0.00144917, 0.339474, -0.00143628)
-bones/11/rotation = Quaternion(0.16904, 0.0431129, -0.180796, 0.967925)
+bones/11/rotation = Quaternion(0.119845, 0.0461236, -0.212428, 0.968702)
 bones/11/scale = Vector3(1, 1, 1)
 bones/12/name = "Hand_L"
 bones/12/parent = 11
@@ -2884,8 +2888,8 @@ bones/24/name = "clavicle_r"
 bones/24/parent = 4
 bones/24/rest = Transform3D(0.0820337, -0.467129, -0.880376, -0.996564, -0.0486077, -0.067069, -0.0114631, 0.882852, -0.469511, 0.0419142, 0.0580154, 0.0744715)
 bones/24/enabled = true
-bones/24/position = Vector3(0.0389928, 0.074208, 0.0745068)
-bones/24/rotation = Quaternion(0.654771, -0.528772, -0.429076, 0.327977)
+bones/24/position = Vector3(0.036402, 0.0885678, 0.0745382)
+bones/24/rotation = Quaternion(0.666468, -0.514233, -0.420402, 0.338595)
 bones/24/scale = Vector3(1, 1, 1)
 bones/25/name = "UpperArm_R"
 bones/25/parent = 24
@@ -2899,7 +2903,7 @@ bones/26/parent = 25
 bones/26/rest = Transform3D(0.996591, -0.082228, -0.00672375, 0.0825025, 0.993275, 0.081223, -2.74973e-07, -0.0815009, 0.996673, 0.00144764, 0.339475, 0.00143652)
 bones/26/enabled = true
 bones/26/position = Vector3(0.00144764, 0.339475, 0.00143652)
-bones/26/rotation = Quaternion(-0.121375, 0.00170851, -0.162459, 0.97922)
+bones/26/rotation = Quaternion(-0.0660588, -0.00605431, -0.179836, 0.981457)
 bones/26/scale = Vector3(1, 1, 1)
 bones/27/name = "Hand_R"
 bones/27/parent = 26
@@ -3069,3 +3073,102 @@ libraries = {
 tree_root = SubResource("AnimationNodeBlendTree_sxeg4")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Blend2/blend_amount = 0.0
+
+[node name="MetalArea3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MetalArea3D"]
+shape = SubResource("SphereShape3D_278cf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -303.0
+offset_top = -297.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_vi7je")
+text = "Quests"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="MechanicLabel3" type="Label" parent="CanvasLayer/Control/VBoxContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme = ExtResource("6_vi7je")
+theme_override_colors/font_color = Color(0.779291, 0.779291, 0.779291, 1)
+theme_override_font_sizes/font_size = 25
+text = "Falar com o mecânico."
+autowrap_mode = 2
+
+[node name="Mechanic_get_metal" type="Label" parent="CanvasLayer/Control/VBoxContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme = ExtResource("6_vi7je")
+theme_override_colors/font_color = Color(0.779291, 0.779291, 0.779291, 1)
+theme_override_font_sizes/font_size = 25
+text = "Pegue metais nos carros e mostre ao mecânico."
+autowrap_mode = 2
+
+[node name="MayorLabel2" type="Label" parent="CanvasLayer/Control/VBoxContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme = ExtResource("6_vi7je")
+theme_override_colors/font_color = Color(0.779291, 0.779291, 0.779291, 1)
+theme_override_font_sizes/font_size = 25
+text = "Falar com a prefeita."
+autowrap_mode = 2
+
+[node name="MayorLabel_send_carrot_at_mayor" type="Label" parent="CanvasLayer/Control/VBoxContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme = ExtResource("6_vi7je")
+theme_override_colors/font_color = Color(0.779291, 0.779291, 0.779291, 1)
+theme_override_font_sizes/font_size = 25
+text = "Entregue a prefeita a colheita para comunidade se alimentar."
+autowrap_mode = 2
+
+[node name="MayorLabel_planting_in_praca" type="Label" parent="CanvasLayer/Control/VBoxContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme = ExtResource("6_vi7je")
+theme_override_colors/font_color = Color(0.779291, 0.779291, 0.779291, 1)
+theme_override_font_sizes/font_size = 25
+text = "Plante na praça"
+autowrap_mode = 2
+
+[node name="ship_first" type="Label" parent="CanvasLayer/Control/VBoxContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme = ExtResource("6_vi7je")
+theme_override_colors/font_color = Color(0.779291, 0.779291, 0.779291, 1)
+theme_override_font_sizes/font_size = 25
+text = "Faça sua primeira negociação no barco quando este chegar."
+autowrap_mode = 2

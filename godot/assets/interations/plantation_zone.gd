@@ -42,6 +42,11 @@ func _process(delta):
 		progress_bar_harvest.value+=20*delta
 		get_node("PlatationMeshInstance3D").visible=true
 	if (progress_bar_harvest.value>=progress_bar_harvest.max_value):
+		var res = ResourceLoader.load("res://resources/quests.tres")
+		if (res.quest_mayor==1):
+			res.quest_mayor = 2
+			ResourceSaver.save(res,"res://resources/quests.tres")
+		
 		get_node("PlantingWarningControl/HarvestVBoxContainer").visible=false
 		get_node("PlantingWarningControl/VBoxContainer").visible=false
 		in_harvest=false
@@ -69,7 +74,6 @@ func _on_plantation_area_3d_body_entered(body):
 	if ((body.name=="Player") and (can_planting==true or in_harvest==true)):
 		get_node("PlantingWarningControl").visible=!get_node("PlantingWarningControl").visible
 		
-
 
 func _on_plantation_area_3d_body_exited(body):
 	if (body.name=="Player"):

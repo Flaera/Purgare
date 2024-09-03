@@ -275,6 +275,7 @@ size = Vector2(3, 3)
 [node name="Char_Mother" type="Node3D"]
 script = ExtResource("1_2xyyv")
 texture_carrot = ExtResource("2_660bq")
+amount_money_by_item = 150
 
 [node name="SKEL_Character_Town" type="Node3D" parent="."]
 

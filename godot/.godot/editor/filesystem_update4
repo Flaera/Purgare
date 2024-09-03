@@ -1,0 +1,11 @@
+res://default_env.tres
+res://assets/menu_textures/menu.tscn
+res://resources/theme_quests.tres
+res://resources/theme_hollow.tres
+res://resources/theme_general_red.tres
+res://scenes/character_movementation/world.tscn
+res://assets/charcters/shoper.tscn
+res://assets/charcters/sk_character_mother_with_animation2.tscn
+res://assets/charcters/scripts/mayor.gd
+res://assets/charcters/scripts/shoper.gd
+res://resources/quests.tres

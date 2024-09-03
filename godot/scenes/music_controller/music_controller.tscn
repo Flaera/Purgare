@@ -11,6 +11,7 @@ script = ExtResource("1_aki4v")
 [node name="ambient_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_cd0m5")
 volume_db = 5.0
+parameters/looping = true
 
 [node name="background_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_p23jp")

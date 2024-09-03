@@ -23,6 +23,10 @@ MusicController="*res://scenes/music_controller/music_controller.tscn"
 
 movie_writer/movie_file="C:/Users/Pichau/Desktop/grav-purgare-v0.1.avi"
 
+[global_group]
+
+car="Cars of game to collect of metal."
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
